@@ -1,0 +1,170 @@
+$buttonColor : #ff7400;
+
+@mixin linkToButton {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border: 1px solid $buttonColor;
+    padding: 12px 45px;
+    background-color: $buttonColor;
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+body {
+    margin: 0px;
+    * {
+        box-sizing: border-box;
+    }
+    letter-spacing: 1px;
+    font-family: 'Bitter', serif;
+}
+header {
+    background: transparent;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    #navLeft {
+        width: 50%;
+        padding-left: 30px;
+    }
+    #navRight{
+        width: 50%;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            li {
+                margin-right: 10px;  
+            }
+        }
+    }
+}
+
+.innerContainer .imageDiv {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    .jumbotronImage {
+       width: 500px; height: 600px;
+       margin-left: 60px;
+       margin-top: 50px;
+    }
+}
+
+.mainContainer {
+    height: 88vh; 
+    width: 100%;
+    color: white;
+    background: linear-gradient(to bottom, #56abe6 0%,
+         #5cb8f6 25%, #63bdfb 50%,
+         #66c0fc 75%, #64befa 100%);
+    position: relative;
+    .termsDiv { 
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            padding-bottom: 25px;
+    }
+    .mainTextContainer {
+        height: 70%;
+        width: 70%;
+        margin: 5%;
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+       
+        .upperTextContainer {
+            flex: 1;
+            position: relative;
+            h1{
+                font-size: 80px;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+        .lowerTextContainer {
+            flex: 1;
+            text-align: center;
+            .lowerText {
+                height: 50%;
+            }
+            h2 {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+            a {
+                @include linkToButton;
+            }
+        }
+    }
+}
+
+// Section style 
+
+#root section {
+    height: 140vh;
+    .startListeningDiv {
+        text-align: center;
+        padding: 50px 0;
+        height: 45vh;
+        h1 {
+            margin-bottom: 0;
+            font-weight: bolder;
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        p {
+            margin-bottom: 30px;
+            margin-top: 9px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        a {
+            @include linkToButton;
+        }
+         
+    }
+    .albumDiv {
+        height: 95vh;
+        width: 80%;
+        margin: 0 auto;
+        // display: inline;
+        // background-color: red;
+        margin-bottom: 100px;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type:none;
+            flex-wrap: wrap;
+            padding-left: 0;
+            padding-top: 20px;
+            li {
+                flex-basis: 30%;
+                margin-bottom: 25px;
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+    }
+}
+
+li figure {
+    margin: 0;
+}
+
+
