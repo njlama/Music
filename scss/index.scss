@@ -12,35 +12,60 @@ $buttonColor : #ff7400;
     font-weight: bold;
 }
 
+@mixin card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
 body {
     margin: 0px;
     * {
         box-sizing: border-box;
     }
     letter-spacing: 1px;
+    height: 100%;
     font-family: 'Bitter', serif;
+    position: relative;
+    padding-bottom: 550px;  // same as footer height 
+}
+#root {
+    height: 100%;
+    
 }
 header {
     background: transparent;
+    z-index: 1;
     width: 100%;
     height: 10vh;
-    display: flex;
-    justify-content: space-around;
-    #navLeft {
-        width: 50%;
-        padding-left: 30px;
-    }
-    #navRight{
-        width: 50%;
-        ul {
-            display: flex;
-            justify-content: space-between;
-            list-style-type: none;
-            li {
-                margin-right: 10px;  
+    position: fixed;
+    top:0;left: 0; right: 0;
+    #headerInnerDiv {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        #navLeft {
+            width: 50%;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        #navRight{
+            width: 50%;
+            ul {
+                display: flex;
+                justify-content: flex-end;
+                list-style-type: none;
+                margin-top: 22px;
+                margin-bottom: 22px;
+                padding-left: 0;
+                
+                li {
+                    margin-right: 10px;  
+                    padding-right: 25px;
+                }
             }
         }
     }
+    
 }
 
 .innerContainer .imageDiv {
@@ -55,7 +80,7 @@ header {
 }
 
 .mainContainer {
-    height: 88vh; 
+    height: 670px; 
     width: 100%;
     color: white;
     background: linear-gradient(to bottom, #56abe6 0%,
@@ -111,12 +136,12 @@ header {
 
 // Section style 
 
-#root section {
-    height: 140vh;
+ section {
+    height: 1250px;
     .startListeningDiv {
         text-align: center;
         padding: 50px 0;
-        height: 45vh;
+        height: 275px;
         h1 {
             margin-bottom: 0;
             font-weight: bolder;
@@ -137,14 +162,13 @@ header {
          
     }
     .albumDiv {
-        height: 95vh;
+        height: 975px;
         width: 80%;
         margin: 0 auto;
-        // display: inline;
-        // background-color: red;
         margin-bottom: 100px;
         ul {
             display: flex;
+            height: 100%;
             justify-content: space-around;
             list-style-type:none;
             flex-wrap: wrap;
@@ -163,8 +187,67 @@ header {
     }
 }
 
-li figure {
-    margin: 0;
+li {
+    figure {
+        margin: 0;
+        @include card;  
+        &:hover {
+             box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.4);
+             cursor: pointer;
+        }
+    }
+    figcaption {
+        
+        p:first-child {
+            margin-bottom: 5px;
+            font-weight: bolder;
+            color: rgb(78, 76, 76);
+        }
+        p:last-child {
+            margin-top: 0;
+            color: gray;
+            font-size: 14px;
+        }
+
+        
+    }
 }
+
+footer {
+    // margin-top: 20px;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px; right: 0px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: white;
+    background: black;
+    .aboutMainDiv {
+        height: 70%;
+        display: flex;
+        justify-content: space-around;
+        div {
+            flex: 1;
+        }
+        div:first-child {
+            text-align: center;
+        }
+    }
+    .footerIcons {
+        height: 30%;
+        text-align: center;
+        img {
+            padding: 20px;
+        }
+    }
+    h5 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: gray;
+    }
+}
+
 
 
