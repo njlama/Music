@@ -23,7 +23,7 @@ navRightUl.setAttribute("id", 'navList');
 navRight.appendChild(navRightUl);
 
 
-let navListArray = ['Premium', 'Help', 'Download', 'Sign Up'];
+let navListArray = ['Premium', 'Help', 'Download'];
 
 for (let i = 0; i < navListArray.length; i++){
     let navRightList = document.createElement('li');
@@ -31,6 +31,18 @@ for (let i = 0; i < navListArray.length; i++){
     navRightUl.appendChild(navRightList);
     navRightList.innerHTML = navListArray[i];
 }
+
+// creating <a> for navigation 
+let navRightLink = document.createElement('li');
+// navRightLink.setAttribute("id", "link");
+navRightUl.appendChild(navRightLink);
+
+let signUp = document.createElement("a");
+signUp.innerHTML = "Sign Up";
+signUp.className = "link";
+signUp.href = "../htmls/allmusic.html";
+navRightLink.appendChild(signUp);
+
 //<---- Header ---->///
 
 //---- Jumbotron Image ---//
@@ -104,6 +116,7 @@ lowerDivTwo.appendChild(premiumButtonLink);
 
 // <--- Second Section ---> //
 let section = document.createElement('section');
+section.setAttribute("id", "landingPageSection");
 root.appendChild(section);
 
 let startListeningDiv = document.createElement('div');
@@ -163,8 +176,6 @@ for ( let i=0; i < images.length; i++){
     let mImage = document.createElement('img');
     mImage.src = images[i].url;
     mImage.className = [i];
-    // mImage.addEventListener("mouseover", imageMouseOver);
-    // mImage.addEventListener("mouseout", imageMouseOut);
     figure.appendChild(mImage);
 }
 
@@ -172,6 +183,7 @@ for ( let i=0; i < images.length; i++){
 
 let footer = document.createElement("footer");
 root.appendChild(footer);
+footer.setAttribute("id", "landingPageFooter");
 
 let aboutMainDiv = document.createElement('div');
 footer.appendChild(aboutMainDiv);
@@ -249,6 +261,14 @@ function toggleHeaderBackgroundColor() {
     })
 }
 toggleHeaderBackgroundColor();
+
+// Navigation to allmusic page 
+
+// let buttonToAllmusic = document.querySelector('.signUp');
+// function openAllMusic(e) {
+//     console.log("hel")
+// }
+// buttonToAllmusic.addEventListener("click", openAllMusic);
 
 
 

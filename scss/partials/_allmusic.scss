@@ -1,0 +1,121 @@
+
+// Variables 
+$logocolor: gray;
+$textGray: rgb(180, 175, 175);
+$mainViewColor: #341f97;
+$mainView-dark: darken($mainViewColor, 30%);
+
+// Mixins 
+@mixin flexColumn {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    color: $textGray;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    font-size: 12px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#allMusicBody {
+    position: relative;
+}
+#sideNav {
+    width: 230px;
+    background-color: $mainView-dark;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    padding-bottom: 90px;
+    .sideNavInnerDiv {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        .appNameDiv {
+            display: flex;
+            flex: 0.5;
+            justify-content: flex-start;
+            min-height: 100px;
+            color: white; 
+            h3 {
+                // flex: 2;
+                line-height: 45px;
+                margin: 15px 0;
+                font-size: 26px; 
+            }
+            img {
+                margin-top: 15px;
+                height: 45px;
+                flex-basis: 25%;
+                padding-right: 10px;
+            }
+        }
+        ul {
+            flex: 3;
+            padding-left: 0;
+            font-size: 17px;
+            min-height: 300px;
+            li {
+                padding-bottom: 20px;
+                list-style-type: none;
+                display: flex;
+                .navLogo {
+                    height: 24px;
+                    padding-right: 15px;
+                    opacity: 0.5;
+                    color: $logocolor;
+                }
+                p {
+                    margin-top: 5px;
+                }
+                a {
+                    color: gray;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+#songContainer {
+    position: relative;
+    height: 1400px;
+    width: 100%;
+    padding-left:230px;
+    background-color: $mainViewColor;  
+    // background: darken($mainViewColor, 20%);
+}
+
+.navBar-mainView {
+    width: 80%;
+    margin: auto;
+    .genre {
+        padding-top: 30px;
+        padding-bottom: 20px;
+        height: 80px;
+        @include flexColumn;
+    }
+}
+
+#footerAllMusic {
+    width: 100%;
+    height: 90px;    
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    background: rgb(40, 40, 40);
+    text-align: center;
+    .player {
+        padding-top: 20px;
+
+    }
+}
+
