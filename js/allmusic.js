@@ -1,7 +1,8 @@
 // side NavBar
 let sideNav = document.querySelector('#sideNav');
 
-let sideNavInnerDiv = document.createElement("div");
+let hello = document.createElement("div");
+let sideNavInnerDiv = hello;
 sideNavInnerDiv.className = "sideNavInnerDiv"
 sideNav.appendChild(sideNavInnerDiv);
 
@@ -71,3 +72,32 @@ for (let i = 0; i < sideNavList.length; i++){
             li.appendChild(userLibrary);
     }
 }
+
+// Creating Top Nav Bar for main view 
+
+let topNavBar = document.querySelector(".navBar-mainView");
+let genreUl = document.createElement("ul");
+genreUl.className = "genre";
+topNavBar.appendChild(genreUl);
+
+let genre = ["featured", "pop", "r&b", "country", "comming soon"];
+
+genre.forEach((each, index) => {
+    let li = document.createElement("li");
+    genreUl.appendChild(li);
+
+    let item = document.createElement("a");
+    item.innerHTML = each;
+    li.appendChild(item);
+
+    if (index === 0){
+        item.className = "active";
+    }
+
+    item.addEventListener("click", function(){
+        let current = document.getElementsByClassName("active")[0];
+        current.className = current.className.replace("active", "");
+        this.className = "active";
+    })
+});
+

@@ -6,7 +6,7 @@ $mainViewColor: #341f97;
 $mainView-dark: darken($mainViewColor, 30%);
 
 // Mixins 
-@mixin flexColumn {
+@mixin topNavbarFlexStyle {
     margin: 0;
     list-style-type: none;
     display: flex;
@@ -94,6 +94,16 @@ $mainView-dark: darken($mainViewColor, 30%);
     // background: darken($mainViewColor, 20%);
 }
 
+// active class
+.active {
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid rgb(199, 146, 13);
+    border-image: linear-gradient(to right, rgb(199, 146, 13) 50%, rgba(163, 13, 13, 0) 50%); /* to top - at 50% transparent */
+    border-image-slice: 1;
+    color: white;
+    font-size: 13px;
+}
+
 .navBar-mainView {
     width: 80%;
     margin: auto;
@@ -101,9 +111,13 @@ $mainView-dark: darken($mainViewColor, 30%);
         padding-top: 30px;
         padding-bottom: 20px;
         height: 80px;
-        @include flexColumn;
+        @include topNavbarFlexStyle;
+        a:hover {
+            @extend .active;
+        }
     }
 }
+
 
 #footerAllMusic {
     width: 100%;
